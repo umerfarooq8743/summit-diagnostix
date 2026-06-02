@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Summit Diagnostix</title>
+  <meta name="description" content="Contact Summit Diagnostix for product evaluation, manufacturing partnerships, distribution opportunities, collaboration discussions or general enquiries." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 48px;
+      align-items: start;
+    }
+    .map-placeholder {
+      background: linear-gradient(135deg, var(--sky), var(--sky-mid));
+      border-radius: var(--radius-lg);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      border: 1px solid var(--sky-mid);
+      margin-top: 24px;
+    }
+    .map-placeholder svg { opacity: .4; }
+    .map-placeholder p { font-size: .85rem; color: var(--navy); font-weight: 600; opacity: .6; }
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Summit Diagnostix Home">
+          <img src="assets/logo.png" alt="Summit Diagnostix Logo" />
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="quality.html"  class="nav-link">Quality</a></li>
+          <li><a href="blog.html"     class="nav-link">Blog</a></li>
+          <li><a href="orders.html"   class="nav-link">Orders</a></li>
+          <li><a href="contact.html"  class="nav-link active nav-cta">Contact Us</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Contact Us</span>
+        </div>
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you. Whether it's a product question, a partnership idea or just a conversation — our team is ready to respond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section class="section-sm" style="background:var(--white);" id="contact-info">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card anim-fade-up delay-1">
+          <div class="contact-info-icon">✉</div>
+          <h4>Email Us</h4>
+          <p><a href="mailto:info@summitdiagnostix.com">info@summitdiagnostix.com</a></p>
+          <p style="font-size:.8rem;margin-top:4px;">We typically respond within 1–2 business days.</p>
+        </div>
+        <div class="contact-info-card anim-fade-up delay-2">
+          <div class="contact-info-icon">📍</div>
+          <h4>Our Location</h4>
+          <p>Address available on request.</p>
+          <p style="font-size:.8rem;margin-top:4px;">We operate internationally and welcome global enquiries.</p>
+        </div>
+        <div class="contact-info-card anim-fade-up delay-3">
+          <div class="contact-info-icon">📞</div>
+          <h4>Phone</h4>
+          <p>Available upon request.</p>
+          <p style="font-size:.8rem;margin-top:4px;">Please email us first and we will arrange a call.</p>
+        </div>
+        <div class="contact-info-card anim-fade-up delay-4">
+          <div class="contact-info-icon">🕐</div>
+          <h4>Response Time</h4>
+          <p>1–2 Business Days</p>
+          <p style="font-size:.8rem;margin-top:4px;">Monday to Friday, 9:00 AM – 5:00 PM (GMT).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY CATEGORIES -->
+  <section class="section-sm" style="background:var(--off-white);" id="inquiry-types">
+    <div class="container">
+      <div class="section-header text-center anim-fade-up">
+        <span class="section-tag">Enquiry Type</span>
+        <h2 class="section-title">What Can We <span>Help With?</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Select your enquiry category to help us route your message to the right person.</p>
+      </div>
+      <div class="inquiry-grid anim-fade-up">
+        <div class="inquiry-item" data-category="Product Evaluation" id="inq-eval">
+          <div class="inquiry-icon">📦</div>
+          <p>Product Evaluation</p>
+        </div>
+        <div class="inquiry-item" data-category="Manufacturing Partnerships" id="inq-mfg">
+          <div class="inquiry-icon">🏭</div>
+          <p>Manufacturing Partnerships</p>
+        </div>
+        <div class="inquiry-item" data-category="Distribution Opportunities" id="inq-dist">
+          <div class="inquiry-icon">🌐</div>
+          <p>Distribution Opportunities</p>
+        </div>
+        <div class="inquiry-item" data-category="Collaboration Discussions" id="inq-collab">
+          <div class="inquiry-icon">🤝</div>
+          <p>Collaboration Discussions</p>
+        </div>
+        <div class="inquiry-item" data-category="General Enquiry" id="inq-general">
+          <div class="inquiry-icon">💬</div>
+          <p>General Enquiry</p>
+        </div>
+      </div>
+      <input type="hidden" id="inquiry-category" value="" />
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + SIDEBAR -->
+  <section class="section" style="background:var(--white);" id="contact-form-section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Form -->
+        <div>
+          <div class="form-card anim-fade-up">
+            <div class="section-header">
+              <span class="section-tag">Send a Message</span>
+              <h2 class="section-title">Write to <span>Our Team</span></h2>
+              <div class="divider"></div>
+            </div>
+
+            <form data-form="contact" id="contact-form" novalidate>
+              <div class="form-grid">
+
+                <!-- Name -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name <span style="color:var(--accent);">*</span></label>
+                  <input type="text" class="form-control" id="contact-name" name="name" placeholder="Your full name" required />
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address <span style="color:var(--accent);">*</span></label>
+                  <input type="email" class="form-control" id="contact-email" name="email" placeholder="your@email.com" required />
+                </div>
+
+                <!-- Organisation -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-org">Organisation</label>
+                  <input type="text" class="form-control" id="contact-org" name="organisation" placeholder="Your organisation" />
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input type="tel" class="form-control" id="contact-phone" name="phone" placeholder="+44 20 7946 0958" />
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group full">
+                  <label class="form-label" for="contact-subject">Subject <span style="color:var(--accent);">*</span></label>
+                  <input type="text" class="form-control" id="contact-subject" name="subject" placeholder="What is your enquiry about?" required />
+                </div>
+
+                <!-- Message -->
+                <div class="form-group full">
+                  <label class="form-label" for="contact-message">Message <span style="color:var(--accent);">*</span></label>
+                  <textarea class="form-control" id="contact-message" name="message" rows="6" placeholder="Please describe your enquiry in as much detail as possible…" required></textarea>
+                </div>
+
+                <!-- Submit -->
+                <div class="form-group full form-submit">
+                  <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn" data-label="Send Message" style="width:100%;justify-content:center;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Send Message
+                  </button>
+                  <p style="font-size:.78rem;color:var(--text-light);margin-top:10px;text-align:center;">Your information is kept confidential and will only be used to respond to your enquiry.</p>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- Success -->
+            <div class="form-success" id="contact-success">
+              ✅ Thank you for your message! We'll be in touch within 1–2 business days.
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div style="position:sticky;top:96px;">
+          <!-- Team Cards -->
+          <div style="background:var(--white);border-radius:var(--radius-lg);padding:28px;border:1px solid var(--gray-100);margin-bottom:24px;" class="anim-fade-up">
+            <h4 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--sky);">Meet Our Team</h4>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-size:.85rem;font-weight:700;flex-shrink:0;">AH</div>
+                <div>
+                  <div style="font-size:.9rem;font-weight:700;color:var(--navy);">Dr. Arif Hussain</div>
+                  <div style="font-size:.75rem;color:var(--accent);font-weight:600;">Founding Director</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy-mid),var(--accent-light));display:flex;align-items:center;justify-content:center;color:white;font-size:.85rem;font-weight:700;flex-shrink:0;">ZA</div>
+                <div>
+                  <div style="font-size:.9rem;font-weight:700;color:var(--navy);">Ziyad Arid</div>
+                  <div style="font-size:.75rem;color:var(--accent);font-weight:600;">Product Development</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#2563b0);display:flex;align-items:center;justify-content:center;color:white;font-size:.85rem;font-weight:700;flex-shrink:0;">QA</div>
+                <div>
+                  <div style="font-size:.9rem;font-weight:700;color:var(--navy);">Qaisar</div>
+                  <div style="font-size:.75rem;color:var(--accent);font-weight:600;">Product Quality Control</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#4a90d9);display:flex;align-items:center;justify-content:center;color:white;font-size:.85rem;font-weight:700;flex-shrink:0;">FA</div>
+                <div>
+                  <div style="font-size:.9rem;font-weight:700;color:var(--navy);">Dr. Faisal Afridi</div>
+                  <div style="font-size:.75rem;color:var(--accent);font-weight:600;">Microbiologist</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email direct -->
+          <div style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:var(--radius-lg);padding:28px;" class="anim-fade-up delay-1">
+            <div style="font-size:2rem;margin-bottom:12px;">✉</div>
+            <h4 style="color:var(--white);margin-bottom:8px;">Direct Email</h4>
+            <a href="mailto:info@summitdiagnostix.com" style="color:rgba(255,255,255,.85);font-size:.9rem;font-weight:600;word-break:break-all;">info@summitdiagnostix.com</a>
+            <p style="color:rgba(255,255,255,.6);font-size:.82rem;margin-top:10px;line-height:1.6;">Drop us an email at any time and we'll get back to you as soon as possible.</p>
+          </div>
+
+          <!-- Enquiry types quick list -->
+          <div style="background:var(--off-white);border-radius:var(--radius-lg);padding:28px;margin-top:24px;border:1px solid var(--gray-100);" class="anim-fade-up delay-2">
+            <h4 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);margin-bottom:14px;">We Can Help With…</h4>
+            <ul style="display:flex;flex-direction:column;gap:8px;">
+              <li style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);"><span style="color:var(--accent);">→</span> Product evaluation requests</li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);"><span style="color:var(--accent);">→</span> Manufacturing partnerships</li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);"><span style="color:var(--accent);">→</span> Distribution opportunities</li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);"><span style="color:var(--accent);">→</span> Collaboration discussions</li>
+              <li style="display:flex;align-items:center;gap:8px;font-size:.875rem;color:var(--text-body);"><span style="color:var(--accent);">→</span> General enquiries</li>
+            </ul>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder anim-fade-up delay-3">
+            <svg width="48" height="48" fill="none" stroke="#0d2550" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <p>Location available on request</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section class="section" style="background:var(--off-white);" id="contact-team">
+    <div class="container">
+      <div class="section-header text-center anim-fade-up">
+        <span class="section-tag">Our People</span>
+        <h2 class="section-title">Meet the <span>Team</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Our multidisciplinary team is always happy to answer your questions directly.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card ta-1 anim-fade-up delay-1">
+          <div class="team-avatar">
+            <div class="team-avatar-inner">AH</div>
+          </div>
+          <h4>Dr. Arif Hussain</h4>
+          <div class="team-role">Founding Director</div>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:10px;line-height:1.6;">Vision, leadership, and strategic direction of Summit Diagnostix.</p>
+        </div>
+        <div class="team-card ta-2 anim-fade-up delay-2">
+          <div class="team-avatar">
+            <div class="team-avatar-inner">ZA</div>
+          </div>
+          <h4>Ziyad Arid</h4>
+          <div class="team-role">Product Development</div>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:10px;line-height:1.6;">Driving innovative product design from concept through to manufacture.</p>
+        </div>
+        <div class="team-card ta-3 anim-fade-up delay-3">
+          <div class="team-avatar">
+            <div class="team-avatar-inner">QA</div>
+          </div>
+          <h4>Qaisar</h4>
+          <div class="team-role">Product Quality Control</div>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:10px;line-height:1.6;">Ensuring every product meets the highest quality and reliability standards.</p>
+        </div>
+        <div class="team-card ta-4 anim-fade-up delay-4">
+          <div class="team-avatar">
+            <div class="team-avatar-inner">FA</div>
+          </div>
+          <h4>Dr. Faisal Afridi</h4>
+          <div class="team-role">Microbiologist</div>
+          <p style="font-size:.82rem;color:var(--text-light);margin-top:10px;line-height:1.6;">Microbiological expertise guiding specimen preservation system design.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner anim-fade-up">
+        <h2>Looking to Place an Order?</h2>
+        <p>For product orders, quantity enquiries and pricing, head to our dedicated Orders page and submit a formal enquiry.</p>
+        <div class="cta-actions">
+          <a href="orders.html" class="btn btn-primary btn-lg" id="contact-cta-order-btn">Place an Enquiry</a>
+          <a href="products.html" class="btn btn-secondary btn-lg" id="contact-cta-products-btn">View Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text anim-fade-up">
+          <h2>Stay Connected</h2>
+          <p>Subscribe to receive the latest updates on Summit Diagnostix products and innovations.</p>
+        </div>
+        <form class="newsletter-form anim-fade-up delay-2" data-form="newsletter" id="contact-newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email" id="contact-newsletter-email"/>
+          <button type="submit" class="btn btn-primary" id="contact-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/logo.png" alt="Summit Diagnostix Logo" /></div>
+          <p>Developing practical specimen collection systems designed to improve specimen handling and transport workflows for clinical and veterinary industries.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer-social" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="quality.html">Quality &amp; Support</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li><a href="products.html#urine">Urine Collection</a></li>
+            <li><a href="products.html#biopsy">Biopsy Systems</a></li>
+            <li><a href="products.html#gynecology">Gynecology Screening</a></li>
+            <li><a href="products.html#multi">Multi-Specimen</a></li>
+            <li><a href="products.html#stool">Stool Collection</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">✉</div>
+            <div class="footer-contact-text"><a href="mailto:info@summitdiagnostix.com">info@summitdiagnostix.com</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">📍</div>
+            <div class="footer-contact-text">Address available on request</div>
+          </div>
+          <div style="margin-top:20px;"><a href="contact.html" class="btn btn-accent btn-sm">Get in Touch</a></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(0,0,0,.2);">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>© 2026 Summit Diagnostix. All rights reserved.</p>
+          <p>Innovating Specimen Collection Systems.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+  <script src="scripts.js"></script>
+</body>
+</html>

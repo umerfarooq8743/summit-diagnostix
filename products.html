@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products – Summit Diagnostix</title>
+  <meta name="description" content="Explore Summit Diagnostix product platforms: Urine Collection Systems, Biopsy Specimen Systems, Gynecology Screening Systems and Multi-Specimen Platforms." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* Tab navigation */
+    .product-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      background: var(--off-white);
+      padding: 8px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--gray-100);
+    }
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--text-light);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-display);
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--navy); background: var(--white); }
+    .tab-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Market pills */
+    .market-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--sky);
+      color: var(--navy);
+      border: 1px solid var(--sky-mid);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    /* Advantage checklist */
+    .check-list { display: flex; flex-direction: column; gap: 10px; }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 13px 16px;
+      background: var(--off-white);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--accent);
+    }
+    .check-dot {
+      width: 20px; height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: .65rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-item p { font-size: .9rem; color: var(--text-body); margin: 0; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Summit Diagnostix Home">
+          <img src="assets/logo.png" alt="Summit Diagnostix Logo" />
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link active">Products</a></li>
+          <li><a href="quality.html"  class="nav-link">Quality</a></li>
+          <li><a href="blog.html"     class="nav-link">Blog</a></li>
+          <li><a href="orders.html"   class="nav-link">Orders</a></li>
+          <li><a href="contact.html"  class="nav-link nav-cta">Contact Us</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Products</span>
+        </div>
+        <h1>Our Product Platforms</h1>
+        <p>Innovative specimen collection systems targeting the most critical diagnostic needs across clinical and veterinary settings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOCUS AREAS OVERVIEW -->
+  <section class="section" style="background:var(--white);" id="focus-areas">
+    <div class="container">
+      <div class="section-header text-center anim-fade-up">
+        <span class="section-tag">Focus Areas</span>
+        <h2 class="section-title">Our <span>Core Platforms</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">Four targeted product platforms developed to address critical gaps in specimen collection and handling.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card anim-fade-up delay-1">
+          <div class="product-card-img">
+            <span class="product-badge">Active</span>
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="35" y="25" width="50" height="75" rx="8" fill="#1e6fc8" opacity=".2"/>
+              <rect x="40" y="50" width="40" height="45" rx="5" fill="#1e6fc8" opacity=".15"/>
+              <rect x="30" y="18" width="60" height="14" rx="6" fill="#0d2550" opacity=".25"/>
+              <rect x="44" y="58" width="32" height="28" rx="3" fill="white" opacity=".5"/>
+              <rect x="40" y="78" width="40" height="15" rx="3" fill="#4fb3ef" opacity=".35"/>
+              <line x1="49" y1="66" x2="71" y2="66" stroke="#1e6fc8" stroke-width="1.5" opacity=".6"/>
+              <line x1="49" y1="72" x2="71" y2="72" stroke="#1e6fc8" stroke-width="1.5" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="product-card-body">
+            <h3>Urine Collection Systems</h3>
+            <p>Multi-compartment systems with both boric acid preserved and non-preserved chambers — eliminating the need for resampling during extended transport.</p>
+            <a href="#urine" class="product-card-link" id="prod-urine-link">
+              Full Details
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card anim-fade-up delay-2">
+          <div class="product-card-img">
+            <span class="product-badge dev">Development</span>
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="60" cy="60" r="35" fill="#0d2550" opacity=".12"/>
+              <circle cx="60" cy="60" r="24" fill="#1e6fc8" opacity=".18"/>
+              <circle cx="60" cy="60" r="13" fill="#1e6fc8" opacity=".28"/>
+              <rect x="57" y="22" width="6" height="38" rx="3" fill="#0d2550" opacity=".3"/>
+              <rect x="50" y="58" width="20" height="28" rx="7" fill="#1e6fc8" opacity=".2"/>
+              <circle cx="60" cy="63" r="4" fill="#0d2550" opacity=".35"/>
+              <line x1="38" y1="38" x2="82" y2="82" stroke="#1e6fc8" stroke-width="1" opacity=".2" stroke-dasharray="4"/>
+            </svg>
+          </div>
+          <div class="product-card-body">
+            <h3>Biopsy Specimen Systems</h3>
+            <p>Practical specimen containers engineered to support the safe handling and transport of small biopsy tissue samples with maintained integrity.</p>
+            <a href="#biopsy" class="product-card-link" id="prod-biopsy-link">
+              Full Details
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card anim-fade-up delay-3">
+          <div class="product-card-img">
+            <span class="product-badge dev">Development</span>
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="60" cy="65" rx="28" ry="32" fill="#1e6fc8" opacity=".12"/>
+              <ellipse cx="60" cy="62" rx="18" ry="22" fill="#1e6fc8" opacity=".2"/>
+              <rect x="57" y="28" width="6" height="20" rx="3" fill="#0d2550" opacity=".25"/>
+              <line x1="44" y1="38" x2="76" y2="38" stroke="#0d2550" stroke-width="2" opacity=".2" stroke-linecap="round"/>
+              <rect x="57" y="86" width="6" height="14" rx="3" fill="#0d2550" opacity=".2"/>
+              <circle cx="60" cy="62" r="7" fill="#1e6fc8" opacity=".35"/>
+              <circle cx="60" cy="40" r="4" fill="#1e6fc8" opacity=".2"/>
+            </svg>
+          </div>
+          <div class="product-card-body">
+            <h3>Gynecology Screening Systems</h3>
+            <p>Future integrated systems to support women's health workflows, including cervical screening, HPV and cytology specimen collection.</p>
+            <a href="#gynecology" class="product-card-link" id="prod-gynecology-link">
+              Full Details
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card anim-fade-up delay-4">
+          <div class="product-card-img">
+            <span class="product-badge">Active</span>
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="18" y="40" width="26" height="58" rx="6" fill="#0d2550" opacity=".18"/>
+              <rect x="47" y="33" width="26" height="65" rx="6" fill="#1e6fc8" opacity=".2"/>
+              <rect x="76" y="45" width="26" height="53" rx="6" fill="#0d2550" opacity=".15"/>
+              <rect x="18" y="31" width="26" height="12" rx="4" fill="#0d2550" opacity=".22"/>
+              <rect x="47" y="25" width="26" height="12" rx="4" fill="#1e6fc8" opacity=".28"/>
+              <rect x="76" y="37" width="26" height="12" rx="4" fill="#0d2550" opacity=".2"/>
+              <rect x="22" y="70" width="18" height="22" rx="3" fill="#4fb3ef" opacity=".3"/>
+              <rect x="51" y="63" width="18" height="29" rx="3" fill="#4fb3ef" opacity=".3"/>
+              <rect x="80" y="75" width="18" height="17" rx="3" fill="#4fb3ef" opacity=".25"/>
+            </svg>
+          </div>
+          <div class="product-card-body">
+            <h3>Multi-Specimen Platforms</h3>
+            <p>Versatile collection platforms designed to handle multiple sample types simultaneously, reducing handling time and improving laboratory throughput.</p>
+            <a href="#multi" class="product-card-link" id="prod-multi-link">
+              Full Details
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- URINE COLLECTION DETAIL -->
+  <section class="product-detail-section" id="urine">
+    <div class="container">
+      <div class="section-header anim-fade-up">
+        <span class="section-tag">Current Development</span>
+        <h2 class="section-title">Urine Collection <span>Systems</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="product-detail-card anim-fade-up">
+        <div class="product-detail-visual">
+          <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:auto;">
+            <!-- Container 1 -->
+            <rect x="10" y="60" width="80" height="170" rx="10" fill="#1e6fc8" opacity=".15" stroke="#1e6fc8" stroke-width="1.5" opacity=".3"/>
+            <rect x="5" y="42" width="90" height="22" rx="8" fill="#0d2550" opacity=".25" stroke="#0d2550" stroke-width="1" opacity=".3"/>
+            <rect x="18" y="120" width="64" height="80" rx="6" fill="white" opacity=".6"/>
+            <rect x="14" y="192" width="72" height="32" rx="5" fill="#4fb3ef" opacity=".4"/>
+            <line x1="24" y1="132" x2="76" y2="132" stroke="#1e6fc8" stroke-width="1.5" opacity=".5"/>
+            <line x1="24" y1="144" x2="76" y2="144" stroke="#1e6fc8" stroke-width="1.5" opacity=".5"/>
+            <line x1="24" y1="156" x2="60" y2="156" stroke="#1e6fc8" stroke-width="1.5" opacity=".5"/>
+            <!-- BORIC ACID badge -->
+            <rect x="16" y="90" width="68" height="22" rx="4" fill="#0d2550" opacity=".18"/>
+            <text x="50" y="105" font-size="8" fill="#0d2550" opacity=".7" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">BORIC ACID</text>
+            <!-- Container 2 -->
+            <rect x="110" y="75" width="80" height="155" rx="10" fill="#3a8fe0" opacity=".12" stroke="#3a8fe0" stroke-width="1.5" opacity=".25"/>
+            <rect x="105" y="58" width="90" height="22" rx="8" fill="#163370" opacity=".2" stroke="#163370" stroke-width="1" opacity=".25"/>
+            <rect x="118" y="132" width="64" height="70" rx="6" fill="white" opacity=".5"/>
+            <rect x="114" y="188" width="72" height="36" rx="5" fill="#74b9e8" opacity=".35"/>
+            <!-- NON-PRESERVED badge -->
+            <rect x="116" y="103" width="68" height="22" rx="4" fill="#163370" opacity=".15"/>
+            <text x="150" y="118" font-size="7" fill="#163370" opacity=".7" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">NON-PRESERVED</text>
+            <!-- Dual arrow -->
+            <path d="M92 155 L108 155" stroke="#0d2550" stroke-width="2" stroke-linecap="round" opacity=".4"/>
+            <path d="M96 151 L92 155 L96 159" stroke="#0d2550" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+            <path d="M104 151 L108 155 L104 159" stroke="#0d2550" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".4"/>
+          </svg>
+        </div>
+        <div class="product-detail-body">
+          <h2>About the Urine Collection System</h2>
+          <p>Urine containers are essential sterile tools used in clinical diagnostics. Present containers contain boric acid to prevent bacterial overgrowth. However, a sample without preservative is also required when there are long transport times or there is a need for re-sampling.</p>
+          <p>This requires obtaining another sample — a major inconvenience for both patient and clinician. Our multi-compartment specimen collection systems are intended to solve these problems and optimise specimen handling and transport.</p>
+
+          <h4 style="color:var(--navy);margin-bottom:16px;font-size:1rem;">Advantages of Our Dual-Purpose Urine Containers:</h4>
+          <div class="check-list">
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Prevent resampling and testing delays</strong> — both preserved and non-preserved chambers in a single container.</p>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Workflow efficiency &amp; ergonomics</strong> during transport — designed for ease of handling.</p>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Availability of sample for future testing</strong> — ensures sample is always accessible when needed.</p>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Sample integrity &amp; stabilisation</strong> — dual preservation options maintain specimen quality.</p>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Hygiene &amp; spill prevention</strong> — sealed, secure design minimises contamination risks.</p>
+            </div>
+            <div class="check-item">
+              <div class="check-dot">✓</div>
+              <p><strong>Adapting to environmental &amp; sustainability shifts</strong> — designed with future sustainability goals in mind.</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
+            <span class="market-pill">🏥 Clinical Laboratories</span>
+            <span class="market-pill">🏨 Hospitals</span>
+            <span class="market-pill">🔬 Diagnostic Centres</span>
+            <span class="market-pill">🐾 Veterinary Clinics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="section" style="background:var(--white);" id="markets">
+    <div class="container">
+      <div class="section-header text-center anim-fade-up">
+        <span class="section-tag">Our Markets</span>
+        <h2 class="section-title">Who We <span>Serve</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="markets-grid anim-fade-up">
+        <div class="market-card">
+          <div class="market-icon">🏥</div>
+          <h3>Clinical &amp; Diagnostic</h3>
+          <p>Clinical laboratories, hospitals and diagnostic centres that require reliable, high-throughput specimen collection systems for patient diagnostics.</p>
+        </div>
+        <div class="market-card">
+          <div class="market-icon">🐾</div>
+          <h3>Veterinary Sector</h3>
+          <p>Veterinary clinics and animal diagnostic laboratories needing practical, adaptable specimen collection solutions for animal health diagnostics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE DEVELOPMENT -->
+  <section class="section" style="background:var(--off-white);" id="future">
+    <div class="container">
+      <div class="section-header text-center anim-fade-up">
+        <span class="section-tag">Pipeline</span>
+        <h2 class="section-title">Future Development <span>Platforms</span></h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">The next wave of specimen collection innovations currently in development at Summit Diagnostix.</p>
+      </div>
+      <div class="future-grid">
+        <div class="future-card anim-fade-up delay-1" id="gynecology">
+          <div class="future-tag">In Development</div>
+          <div class="future-icon">🩺</div>
+          <h3>Gynecology Screening Systems</h3>
+          <p>Future integrated specimen collection systems intended to support women's health and cervical screening workflows — including potential HPV and cytology collection solutions.</p>
+        </div>
+        <div class="future-card anim-fade-up delay-2" id="biopsy">
+          <div class="future-tag">In Development</div>
+          <div class="future-icon">🔬</div>
+          <h3>Biopsy Specimen Systems</h3>
+          <p>Practical specimen containers designed to support the safe handling and transport of small biopsy samples — maintaining tissue integrity from collection to the laboratory.</p>
+        </div>
+        <div class="future-card anim-fade-up delay-3" id="stool">
+          <div class="future-tag">In Development</div>
+          <div class="future-icon">🧫</div>
+          <h3>Stool Collection Systems</h3>
+          <p>Development of multi-pathway stool specimen collection and preservation platforms for microbiome, parasitology and infection diagnostics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MULTI-SPECIMEN DETAIL -->
+  <section class="section" style="background:var(--white);" id="multi">
+    <div class="container">
+      <div class="section-header anim-fade-up">
+        <span class="section-tag">Platform Overview</span>
+        <h2 class="section-title">Multi-Specimen <span>Collection Platforms</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;" class="anim-fade-up">
+        <div>
+          <p style="font-size:1rem;line-height:1.8;color:var(--text-body);">Our Multi-Specimen Collection Platforms are designed to handle diverse diagnostic needs in a single, unified solution. By combining multiple specimen collection pathways into one ergonomic system, laboratories can dramatically reduce handling time, storage complexity, and the risk of cross-contamination.</p>
+          <p style="color:var(--text-light);line-height:1.75;">These platforms are engineered to be compatible with existing laboratory workflows and standard analytical equipment, making adoption seamless for both clinical and veterinary settings.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+            <span class="market-pill">🔬 Multi-analyte</span>
+            <span class="market-pill">⚡ Rapid processing</span>
+            <span class="market-pill">🛡️ Spill-proof</span>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="background:var(--sky);border-radius:var(--radius-md);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🧪</div>
+            <div style="font-size:.85rem;font-weight:700;color:var(--navy);">Multiple Chambers</div>
+            <div style="font-size:.78rem;color:var(--text-light);margin-top:4px;">Simultaneous sample types</div>
+          </div>
+          <div style="background:var(--sky);border-radius:var(--radius-md);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🏷️</div>
+            <div style="font-size:.85rem;font-weight:700;color:var(--navy);">Clear Labelling</div>
+            <div style="font-size:.78rem;color:var(--text-light);margin-top:4px;">Colour-coded chambers</div>
+          </div>
+          <div style="background:var(--sky);border-radius:var(--radius-md);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">🔒</div>
+            <div style="font-size:.85rem;font-weight:700;color:var(--navy);">Secure Sealing</div>
+            <div style="font-size:.78rem;color:var(--text-light);margin-top:4px;">Leak-proof design</div>
+          </div>
+          <div style="background:var(--sky);border-radius:var(--radius-md);padding:24px;text-align:center;">
+            <div style="font-size:1.8rem;margin-bottom:8px;">♻️</div>
+            <div style="font-size:.85rem;font-weight:700;color:var(--navy);">Sustainable</div>
+            <div style="font-size:.78rem;color:var(--text-light);margin-top:4px;">Eco-conscious materials</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner anim-fade-up">
+        <h2>Interested in Our Products?</h2>
+        <p>Contact us to learn more about our specimen collection systems or to discuss collaboration and distribution opportunities.</p>
+        <div class="cta-actions">
+          <a href="orders.html" class="btn btn-primary btn-lg" id="products-order-btn">Place an Order</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg" id="products-contact-btn">Contact Our Team</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text anim-fade-up">
+          <h2>Product Updates</h2>
+          <p>Be the first to hear about new specimen collection product launches and developments.</p>
+        </div>
+        <form class="newsletter-form anim-fade-up delay-2" data-form="newsletter" id="products-newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email" id="products-newsletter-email"/>
+          <button type="submit" class="btn btn-primary" id="products-newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/logo.png" alt="Summit Diagnostix Logo" /></div>
+          <p>Developing practical specimen collection systems designed to improve specimen handling and transport workflows.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer-social" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="quality.html">Quality &amp; Support</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li><a href="#urine">Urine Collection</a></li>
+            <li><a href="#biopsy">Biopsy Systems</a></li>
+            <li><a href="#gynecology">Gynecology Screening</a></li>
+            <li><a href="#multi">Multi-Specimen</a></li>
+            <li><a href="#stool">Stool Collection</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">✉</div>
+            <div class="footer-contact-text"><a href="mailto:info@summitdiagnostix.com">info@summitdiagnostix.com</a></div>
+          </div>
+          <div style="margin-top:20px;">
+            <a href="contact.html" class="btn btn-accent btn-sm">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(0,0,0,.2);">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>© 2026 Summit Diagnostix. All rights reserved.</p>
+          <p>Innovating Specimen Collection Systems.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+  <script src="scripts.js"></script>
+</body>
+</html>

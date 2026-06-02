@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Summit Diagnostix</title>
+  <meta name="description" content="Latest articles and insights on specimen collection workflows, veterinary diagnostics, transport best practices and future trends in diagnostic consumables." />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .blog-hero-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-100);
+      margin-bottom: 64px;
+    }
+    .blog-hero-img {
+      background: linear-gradient(135deg, var(--sky) 0%, var(--sky-mid) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 360px;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,37,80,.06), rgba(30,111,200,.12));
+    }
+    .blog-hero-body {
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .blog-featured-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--navy), var(--accent));
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .blog-hero-body h2 {
+      font-size: 1.6rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .blog-hero-body p {
+      color: var(--text-light);
+      font-size: .95rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+    /* Filter pills */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .filter-pill {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      background: var(--white);
+      border: 1.5px solid var(--gray-200);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-display);
+    }
+    .filter-pill:hover,
+    .filter-pill.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    /* Sidebar */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      align-items: start;
+    }
+    .blog-sidebar {
+      position: sticky;
+      top: 96px;
+    }
+    .sidebar-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      border: 1px solid var(--gray-100);
+      margin-bottom: 24px;
+    }
+    .sidebar-card h4 {
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--navy);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--sky);
+    }
+    .sidebar-topic {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: .875rem;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .sidebar-topic:last-child { border: none; }
+    .sidebar-topic:hover { color: var(--accent); padding-left: 4px; }
+    .sidebar-count {
+      background: var(--sky);
+      color: var(--accent);
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+    }
+    .recent-post {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .recent-post:last-child { border: none; }
+    .recent-post-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .recent-post-title {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      margin-bottom: 3px;
+    }
+    .recent-post-date {
+      font-size: .75rem;
+      color: var(--text-light);
+    }
+    @media (max-width: 900px) {
+      .blog-layout { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+      .blog-hero-card { grid-template-columns: 1fr; }
+      .blog-hero-img { min-height: 240px; }
+      .blog-hero-body { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Summit Diagnostix Home">
+          <img src="assets/logo.png" alt="Summit Diagnostix Logo" />
+        </a>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="quality.html"  class="nav-link">Quality</a></li>
+          <li><a href="blog.html"     class="nav-link active">Blog</a></li>
+          <li><a href="orders.html"   class="nav-link">Orders</a></li>
+          <li><a href="contact.html"  class="nav-link nav-cta">Contact Us</a></li>
+        </ul>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">›</span>
+          <span class="current">Blog</span>
+        </div>
+        <h1>Insights &amp; Articles</h1>
+        <p>Expert perspectives on specimen collection, laboratory workflows, veterinary diagnostics and the future of diagnostic consumables.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <section class="section" style="background:var(--off-white);" id="blog-articles">
+    <div class="container">
+
+      <!-- Featured Article -->
+      <div class="blog-hero-card anim-fade-up">
+        <div class="blog-hero-img">
+          <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="90" cy="90" r="70" fill="#1e6fc8" opacity=".08"/>
+            <rect x="60" y="50" width="60" height="80" rx="8" fill="#1e6fc8" opacity=".18" stroke="#1e6fc8" stroke-width="1.5" opacity=".3"/>
+            <rect x="65" y="75" width="50" height="50" rx="5" fill="white" opacity=".6"/>
+            <rect x="60" y="42" width="60" height="14" rx="5" fill="#0d2550" opacity=".22"/>
+            <line x1="72" y1="88" x2="108" y2="88" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+            <line x1="72" y1="100" x2="108" y2="100" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+            <line x1="72" y1="112" x2="95" y2="112" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+            <rect x="60" y="110" width="60" height="16" rx="4" fill="#4fb3ef" opacity=".3"/>
+            <!-- Second container ghost -->
+            <rect x="112" y="62" width="40" height="58" rx="6" fill="#3a8fe0" opacity=".1" stroke="#3a8fe0" stroke-width="1" opacity=".2"/>
+            <rect x="110" y="55" width="44" height="11" rx="4" fill="#163370" opacity=".15"/>
+          </svg>
+        </div>
+        <div class="blog-hero-body">
+          <span class="blog-featured-tag">✦ Featured Article</span>
+          <h2>Challenges in Specimen Collection Workflows</h2>
+          <p>Modern clinical laboratories face mounting pressure to improve turnaround times while maintaining sample quality. We explore the key workflow bottlenecks in specimen collection and practical design-led approaches to resolve them.</p>
+          <div class="blog-meta" style="margin-bottom:20px;">
+            <span class="blog-category">Workflow</span>
+            <span class="blog-date">June 2026 · 8 min read</span>
+          </div>
+          <a href="#article-1" class="btn btn-primary" id="blog-featured-read-btn">Read Full Article</a>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar anim-fade-up">
+        <button class="filter-pill active" data-filter="all" id="filter-all">All Articles</button>
+        <button class="filter-pill" data-filter="workflow" id="filter-workflow">Workflow</button>
+        <button class="filter-pill" data-filter="veterinary" id="filter-vet">Veterinary</button>
+        <button class="filter-pill" data-filter="transport" id="filter-transport">Transport</button>
+        <button class="filter-pill" data-filter="innovation" id="filter-innovation">Innovation</button>
+        <button class="filter-pill" data-filter="future" id="filter-future">Future Trends</button>
+      </div>
+
+      <!-- Blog Grid + Sidebar -->
+      <div class="blog-layout">
+        <!-- Articles Grid -->
+        <div>
+          <div class="blog-grid" id="blog-articles-grid">
+
+            <!-- Article 1 -->
+            <div class="blog-card anim-fade-up delay-1" id="article-1" data-category="workflow">
+              <div class="blog-card-img blog-card-img-1">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#1e6fc8" opacity=".12"/>
+                  <rect x="28" y="24" width="24" height="34" rx="4" fill="#1e6fc8" opacity=".25"/>
+                  <rect x="28" y="52" width="24" height="4" rx="2" fill="#4fb3ef" opacity=".5"/>
+                  <line x1="33" y1="33" x2="47" y2="33" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+                  <line x1="33" y1="40" x2="47" y2="40" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+                  <line x1="33" y1="47" x2="41" y2="47" stroke="#1e6fc8" stroke-width="2" opacity=".5"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category">Workflow</span>
+                  <span class="blog-date">June 2026 · 8 min</span>
+                </div>
+                <h3>Challenges in Specimen Collection Workflows</h3>
+                <p>Exploring the key pain points laboratories face in day-to-day specimen collection and how modern, user-centred design can address them effectively.</p>
+                <a href="#article-1" class="blog-card-link" id="blog-art-1-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="blog-card anim-fade-up delay-2" id="article-2" data-category="veterinary">
+              <div class="blog-card-img blog-card-img-2">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#28a745" opacity=".12"/>
+                  <ellipse cx="40" cy="42" rx="14" ry="16" fill="#28a745" opacity=".18"/>
+                  <circle cx="40" cy="30" r="7" fill="#28a745" opacity=".22"/>
+                  <path d="M28 56 Q40 48 52 56" stroke="#28a745" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+                  <circle cx="28" cy="36" r="4" fill="#28a745" opacity=".15"/>
+                  <circle cx="52" cy="36" r="4" fill="#28a745" opacity=".15"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category" style="background:rgba(40,167,69,.12);color:#28a745;">Veterinary</span>
+                  <span class="blog-date">May 2026 · 6 min</span>
+                </div>
+                <h3>Veterinary Urine Collection Considerations</h3>
+                <p>Unique challenges and best practices for urine specimen collection in veterinary clinical settings — from small animals to large animal practices.</p>
+                <a href="#article-2" class="blog-card-link" id="blog-art-2-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="blog-card anim-fade-up delay-3" id="article-3" data-category="transport">
+              <div class="blog-card-img blog-card-img-3">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#f57c00" opacity=".12"/>
+                  <rect x="26" y="44" width="28" height="14" rx="5" fill="#f57c00" opacity=".25"/>
+                  <rect x="33" y="26" width="14" height="22" rx="5" fill="#f57c00" opacity=".22"/>
+                  <circle cx="40" cy="54" r="3" fill="#f57c00" opacity=".4"/>
+                  <path d="M26 36 Q40 24 54 36" stroke="#f57c00" stroke-width="1.5" opacity=".25" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category" style="background:rgba(245,124,0,.12);color:#f57c00;">Transport</span>
+                  <span class="blog-date">April 2026 · 7 min</span>
+                </div>
+                <h3>Practical Approaches to Specimen Transport</h3>
+                <p>How proper specimen transport systems protect sample integrity from the point of collection to the laboratory bench — and what can go wrong.</p>
+                <a href="#article-3" class="blog-card-link" id="blog-art-3-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="blog-card anim-fade-up delay-1" id="article-4" data-category="innovation">
+              <div class="blog-card-img blog-card-img-4">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#c2185b" opacity=".1"/>
+                  <polygon points="40,20 52,46 28,46" fill="#c2185b" opacity=".18"/>
+                  <rect x="36" y="46" width="8" height="14" rx="3" fill="#c2185b" opacity=".22"/>
+                  <circle cx="40" cy="34" r="5" fill="#c2185b" opacity=".25"/>
+                  <circle cx="40" cy="40" r="20" stroke="#c2185b" stroke-width="1" opacity=".12" fill="none"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category" style="background:rgba(194,24,91,.1);color:#c2185b;">Innovation</span>
+                  <span class="blog-date">March 2026 · 9 min</span>
+                </div>
+                <h3>Workflow Improvements in Diagnostic Consumables</h3>
+                <p>A deep dive into how next-generation diagnostic consumable design is transforming laboratory efficiency, accuracy and staff ergonomics.</p>
+                <a href="#article-4" class="blog-card-link" id="blog-art-4-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Article 5 -->
+            <div class="blog-card anim-fade-up delay-2" id="article-5" data-category="future">
+              <div class="blog-card-img blog-card-img-5">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#3949ab" opacity=".12"/>
+                  <circle cx="40" cy="40" r="16" fill="#3949ab" opacity=".18" stroke="#3949ab" stroke-width="1.5" opacity=".3"/>
+                  <circle cx="40" cy="40" r="6"  fill="#3949ab" opacity=".3"/>
+                  <line x1="40" y1="16" x2="40" y2="24" stroke="#3949ab" stroke-width="2" opacity=".35"/>
+                  <line x1="40" y1="56" x2="40" y2="64" stroke="#3949ab" stroke-width="2" opacity=".35"/>
+                  <line x1="16" y1="40" x2="24" y2="40" stroke="#3949ab" stroke-width="2" opacity=".35"/>
+                  <line x1="56" y1="40" x2="64" y2="40" stroke="#3949ab" stroke-width="2" opacity=".35"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category" style="background:rgba(57,73,171,.12);color:#3949ab;">Future Trends</span>
+                  <span class="blog-date">February 2026 · 10 min</span>
+                </div>
+                <h3>Future Trends in Specimen Collection Systems</h3>
+                <p>Looking ahead: automation integration, sustainability requirements, multi-pathway platforms and the evolution of specimen container technology.</p>
+                <a href="#article-5" class="blog-card-link" id="blog-art-5-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Article 6 — bonus -->
+            <div class="blog-card anim-fade-up delay-3" id="article-6" data-category="workflow">
+              <div class="blog-card-img" style="background:linear-gradient(135deg,#e0f2f1,#b2dfdb);">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                  <circle cx="40" cy="40" r="28" fill="#00796b" opacity=".12"/>
+                  <rect x="28" y="30" width="10" height="24" rx="4" fill="#00796b" opacity=".22"/>
+                  <rect x="42" y="24" width="10" height="30" rx="4" fill="#00796b" opacity=".22"/>
+                  <rect x="56" y="36" width="10" height="18" rx="4" fill="#00796b" opacity=".18"/>
+                  <path d="M28 54 L37 54 L47 54 L61 54" stroke="#00796b" stroke-width="1.5" opacity=".3"/>
+                </svg>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-meta">
+                  <span class="blog-category" style="background:rgba(0,121,107,.1);color:#00796b;">Workflow</span>
+                  <span class="blog-date">January 2026 · 5 min</span>
+                </div>
+                <h3>Reducing Pre-analytical Errors in Specimen Collection</h3>
+                <p>Pre-analytical errors remain the leading source of diagnostic inaccuracy. We examine how intelligent container design can dramatically reduce these errors.</p>
+                <a href="#article-6" class="blog-card-link" id="blog-art-6-link">
+                  Read Article
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+          <!-- Topics -->
+          <div class="sidebar-card anim-fade-up">
+            <h4>Topics</h4>
+            <div class="sidebar-topic"><span>Workflow Improvements</span><span class="sidebar-count">2</span></div>
+            <div class="sidebar-topic"><span>Veterinary Diagnostics</span><span class="sidebar-count">1</span></div>
+            <div class="sidebar-topic"><span>Specimen Transport</span><span class="sidebar-count">1</span></div>
+            <div class="sidebar-topic"><span>Innovation</span><span class="sidebar-count">1</span></div>
+            <div class="sidebar-topic"><span>Future Trends</span><span class="sidebar-count">1</span></div>
+          </div>
+
+          <!-- Recent Posts -->
+          <div class="sidebar-card anim-fade-up delay-1">
+            <h4>Recent Posts</h4>
+            <div class="recent-post">
+              <div class="recent-post-icon" style="background:var(--sky);">🔬</div>
+              <div>
+                <div class="recent-post-title">Challenges in Specimen Collection Workflows</div>
+                <div class="recent-post-date">June 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-icon" style="background:#f0f8ec;">🐾</div>
+              <div>
+                <div class="recent-post-title">Veterinary Urine Collection Considerations</div>
+                <div class="recent-post-date">May 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-icon" style="background:#fff3e0;">🚚</div>
+              <div>
+                <div class="recent-post-title">Practical Approaches to Specimen Transport</div>
+                <div class="recent-post-date">April 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-icon" style="background:#fce4ec;">💡</div>
+              <div>
+                <div class="recent-post-title">Workflow Improvements in Diagnostic Consumables</div>
+                <div class="recent-post-date">March 2026</div>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-icon" style="background:#e8eaf6;">🔭</div>
+              <div>
+                <div class="recent-post-title">Future Trends in Specimen Collection Systems</div>
+                <div class="recent-post-date">February 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter CTA -->
+          <div class="sidebar-card anim-fade-up delay-2" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid));border:none;">
+            <h4 style="color:rgba(255,255,255,.55);">Newsletter</h4>
+            <p style="font-size:.875rem;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:16px;">Get new articles delivered to your inbox every month.</p>
+            <form data-form="newsletter" id="blog-sidebar-newsletter" style="display:flex;flex-direction:column;gap:10px;">
+              <input type="email" class="newsletter-input" placeholder="Your email" required style="font-size:.875rem;padding:10px 14px;" id="blog-sidebar-email"/>
+              <button type="submit" class="btn btn-accent btn-sm" id="blog-sidebar-subscribe-btn" style="width:100%;justify-content:center;">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- Contact CTA -->
+          <div class="sidebar-card anim-fade-up delay-3" style="text-align:center;">
+            <div style="font-size:2rem;margin-bottom:12px;">💬</div>
+            <h4 style="margin-bottom:8px;">Have a Question?</h4>
+            <p style="font-size:.82rem;color:var(--text-light);margin-bottom:16px;">Our team is happy to discuss any aspect of specimen collection and diagnostics.</p>
+            <a href="contact.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;" id="blog-sidebar-contact-btn">Contact Us</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner anim-fade-up">
+        <h2>Contribute to the Conversation</h2>
+        <p>We welcome insights from laboratories, clinicians and researchers. Get in touch to collaborate on content or share your specimen collection experiences.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg" id="blog-cta-contact-btn">Get in Touch</a>
+          <a href="products.html" class="btn btn-secondary btn-lg" id="blog-cta-products-btn">Explore Products</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="assets/logo.png" alt="Summit Diagnostix Logo" /></div>
+          <p>Developing practical specimen collection systems designed to improve specimen handling and transport workflows for clinical and veterinary industries.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social" aria-label="Twitter">𝕏</a>
+            <a href="#" class="footer-social" aria-label="Facebook">f</a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="quality.html">Quality &amp; Support</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li><a href="products.html#urine">Urine Collection</a></li>
+            <li><a href="products.html#biopsy">Biopsy Systems</a></li>
+            <li><a href="products.html#gynecology">Gynecology Screening</a></li>
+            <li><a href="products.html#multi">Multi-Specimen</a></li>
+            <li><a href="products.html#stool">Stool Collection</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">✉</div>
+            <div class="footer-contact-text"><a href="mailto:info@summitdiagnostix.com">info@summitdiagnostix.com</a></div>
+          </div>
+          <div style="margin-top:20px;"><a href="contact.html" class="btn btn-accent btn-sm">Get in Touch</a></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(0,0,0,.2);">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>© 2026 Summit Diagnostix. All rights reserved.</p>
+          <p>Innovating Specimen Collection Systems.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
+  <script src="scripts.js"></script>
+  <script>
+    // Blog filter functionality
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const blogCards   = document.querySelectorAll('#blog-articles-grid .blog-card');
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.getAttribute('data-filter');
+        blogCards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'flex';
+            card.style.flexDirection = 'column';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
