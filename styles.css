@@ -422,6 +422,20 @@ p:last-child { margin-bottom: 0; }
   flex-wrap: wrap;
 }
 
+#hero-explore-btn {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  border-color: transparent;
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(30, 111, 200, 0.3);
+  transition: var(--transition);
+}
+
+#hero-explore-btn:hover {
+  background: linear-gradient(135deg, #3a8fe0 0%, #54aaff 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(58, 143, 224, 0.65);
+}
+
 .hero-stats {
   display: flex;
   gap: 40px;
@@ -1353,8 +1367,8 @@ textarea.form-control { resize: vertical; min-height: 130px; }
 .footer-logo img {
   height: 48px;
   width: auto;
-  filter: brightness(0) invert(1);
-  opacity: .9;
+  /* filter: brightness(0) invert(1); */
+  opacity: .8;
 }
 
 .footer-brand p {
